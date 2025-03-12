@@ -1,27 +1,41 @@
-import { createElement } from "react"
-import app from "./app.module.css"
-import "./style.css"
+import { createElement } from "react";
+import app from "./app.module.css";
+import "./style.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import Button from '../componant/Button';
+import ButtonModif from '../componant/ButtonModif';
+import ButtonSup from '../componant/ButtonSup';
+import Checkbox from '../componant/Checkbox';
+
+import Compteur from "../componant/Compteur";
+
+
 
 
 function App() {
     let firstname = "John";
     return (
         <>
-            <div class="container">
-                <h1 className = {app['textGreen']}>ToDo Liste</h1>
-                <div class="input-section">
-                    <button id="addTask">Ajouter</button>
+            <div className="container">
+                <h1 className={app['textGreen']}>ToDo Liste</h1>
+                <Compteur />
+                <div className="input-section">
+                    <Button nameBoutton="Ajouter" />
                 </div>
-                <div class="filter-section">
-                    <button data-filter="all" class="filter-btn">Toutes</button>
-                    <button data-filter="completed" class="filter-btn">Terminées</button>
-                    <button data-filter="pending" class="filter-btn">En cours</button>
+                <div className="filter-section">
+                    <Button data-filter="all" nameBoutton="Toutes"/>
+                    <Button data-filter="completed" nameBoutton="Terminées"/>
+                    <Button data-filter="pending" nameBoutton="en cours"/>
                 </div>
-                <div>
-                    <input type = "checkbox"></input>
-                    <p>nom de la task</p>
-                    <button><i class="fa-solid fa-check"></i></button>
-
+                <div className="list-task">
+                    <div className="element-list">
+                        <Checkbox />
+                        <p>nom de la task</p>
+                    </div>
+                    <div className="element-list">
+                        <ButtonModif />
+                        <ButtonSup />
+                    </div>
                 </div>
             </div>
         </>
