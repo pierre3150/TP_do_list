@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Compteur() {
     const [count, setCount] = useState(0);
     const [minus, setMinus] = useState(1);
     const [plus, setPlus] = useState(1);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount((currentCount) => {
+                return currentCount + 1
+            })
+        }, 1000)
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, [])
 
     return (
         <div>

@@ -1,5 +1,11 @@
-function Button({nameBoutton}) {
-    return <button className="btn btn-primary">{nameBoutton}</button>
+import React from "react";
+
+function Button({ onClick, name, className = "" }) {
+    return (
+        <button onClick={onClick} className={className}>
+            {name}
+        </button>
+    );
 }
 
-export default Button 
+export default Button;
